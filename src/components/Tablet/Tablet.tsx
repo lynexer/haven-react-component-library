@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { DeviceSize, TabletProps } from './Tablet.types';
+import './Tablet.css';
 
 const Tablet: React.FC<TabletProps> = ({
     children,
