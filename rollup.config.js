@@ -32,12 +32,11 @@ export default [
             terser(),
             postcss()
         ],
-        external: ['react', 'react-dom']
+        external: ['react', 'react-dom', /\.css$/]
     },
     {
         input: 'src/index.ts',
         output: [{ file: 'dist/types.d.ts', format: 'es' }],
-        plugins: [dts.default()],
-        external: [/\.css$/]
+        plugins: [dts.default()]
     }
 ];
