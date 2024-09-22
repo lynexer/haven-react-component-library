@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export type BadgeSize = 'sm' | 'base' | 'lg';
 export type BadgeColour =
     | 'red'
@@ -13,7 +15,7 @@ export type BadgeColour =
     | 'secondary';
 
 export interface BadgeProps {
-    children: React.ReactNode;
+    children: ReactNode;
     colour?: BadgeColour;
     size?: BadgeSize;
     className?: string;
