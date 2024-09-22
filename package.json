@@ -6,7 +6,7 @@
     "module": "dist/esm/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
-        "rollup": "rollup -c --bundleConfigAsCjs"
+        "build": "rollup -c --bundleConfigAsCjs"
     },
     "repository": {
         "type": "git",
