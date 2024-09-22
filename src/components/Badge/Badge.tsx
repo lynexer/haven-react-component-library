@@ -1,26 +1,13 @@
 import React from 'react';
 import { match } from 'ts-pattern';
+import { BadgeProps } from './Badge.types';
 
-export type BadgeSize = 'sm' | 'base' | 'lg';
-export type BadgeColour =
-    | 'red'
-    | 'green'
-    | 'blue'
-    | 'yellow'
-    | 'gray'
-    | 'grey'
-    | 'success'
-    | 'danger'
-    | 'warning'
-    | 'primary'
-    | 'secondary';
-
-const Badge: React.FC<{
-    children: React.ReactNode;
-    colour: BadgeColour;
-    size: BadgeSize;
-    className: string;
-}> = ({ children, colour = 'grey', size = 'base', className = '' }) => {
+const Badge: React.FC<BadgeProps> = ({
+    children,
+    colour = 'grey',
+    size = 'base',
+    className = ''
+}) => {
     const getCssColours = (): string => {
         return match(colour)
             .returnType<string>()
