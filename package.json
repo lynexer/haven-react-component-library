@@ -1,0 +1,27 @@
+{
+    "name": "@lynexer/haven-react-components",
+    "version": "0.0.1",
+    "description": "A reusable React component library built for the Project Haven FiveM server NUI",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lynexer/haven-react-component-library.git"
+    },
+    "keywords": [
+        "React",
+        "components"
+    ],
+    "author": {
+        "name": "Kyle Graham",
+        "url": "https://github.com/lynexer"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/lynexer/haven-react-component-library/issues"
+    },
+    "homepage": "https://github.com/lynexer/haven-react-component-library#readme",
+    "devDependencies": {
+        "@types/react": "^18.3.8",
+        "react": "^18.3.1",
+        "typescript": "^5.6.2"
+    }
+}
