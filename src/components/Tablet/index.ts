@@ -1,2 +1,2 @@
-export { default } from './Tablet';
+export { default as Tablet } from './Tablet';
 export * from './Tablet.types';
