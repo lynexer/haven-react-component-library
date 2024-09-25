@@ -51,8 +51,8 @@ const Tablet: React.FC<TabletProps> = ({
                                 landscape ? 'rotate-90' : ''
                             }`}
                             style={{
-                                width: `${landscape ? '724' : '506'}px`,
-                                height: `${landscape ? '506' : '724'}px`
+                                width: `${landscape ? 724 : 506}px`,
+                                height: `${landscape ? 506 : 724}px`
                             }}
                         >
                             {children}
