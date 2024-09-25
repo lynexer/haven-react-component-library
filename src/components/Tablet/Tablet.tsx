@@ -1,6 +1,7 @@
-import React, { useCallback, useState } from 'react';
+import React from 'react';
 import { DeviceSize, TabletProps } from './Tablet.types';
 import './Tablet.css';
+import useElementDimensions from '../../hooks/useElementDimensions';
 
 const Tablet: React.FC<TabletProps> = ({
     children,
@@ -10,8 +11,9 @@ const Tablet: React.FC<TabletProps> = ({
     colour = 'spacegray',
     className = ''
 }) => {
-    const [height, setHeight] = useState<number | null>(null);
-    const [width, setWidth] = useState<number | null>(null);
+    const { dimensions, ref } = useElementDimensions();
+    const { height, width, x, y } = dimensions ?? {};
+
     const sizeMapping = {
         xs: 'scale-50',
         sm: 'scale-75',
@@ -19,13 +21,6 @@ const Tablet: React.FC<TabletProps> = ({
         lg: 'scale-125',
         xl: 'scale-150'
     };
-
-    const div = useCallback((node: HTMLDivElement) => {
-        if (node !== null) {
-            setHeight(node.getBoundingClientRect().height);
-            setWidth(node.getBoundingClientRect().width);
-        }
-    }, []);
 
     const transformDeviceSize = (size: DeviceSize) => {
         return sizeMapping[size] ?? sizeMapping.base;
@@ -54,7 +49,7 @@ const Tablet: React.FC<TabletProps> = ({
         <div className={createClassList()}>
             <div className={createDeviceClassList()}>
                 <div className='device-frame'>
-                    <div className='device-screen overflow-hidden' ref={div}>
+                    <div className='device-screen overflow-hidden' ref={ref}>
                         <div
                             className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 ${
                                 landscape ? 'rotate-90' : ''
