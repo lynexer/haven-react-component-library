@@ -1,6 +1,6 @@
 {
     "name": "@lynexer/haven-react-components",
-    "version": "0.1.5",
+    "version": "0.3.1",
     "description": "A reusable React component library built for the Project Haven FiveM server NUI",
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
