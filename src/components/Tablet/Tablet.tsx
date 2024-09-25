@@ -1,7 +1,6 @@
 import React from 'react';
 import { DeviceSize, TabletProps } from './Tablet.types';
 import './Tablet.css';
-import useElementDimensions from '../../hooks/useElementDimensions';
 
 const Tablet: React.FC<TabletProps> = ({
     children,
@@ -11,9 +10,6 @@ const Tablet: React.FC<TabletProps> = ({
     colour = 'spacegray',
     className = ''
 }) => {
-    const { dimensions, ref } = useElementDimensions();
-    const { height, width, x, y } = dimensions ?? {};
-
     const sizeMapping = {
         xs: 'scale-50',
         sm: 'scale-75',
@@ -49,14 +45,14 @@ const Tablet: React.FC<TabletProps> = ({
         <div className={createClassList()}>
             <div className={createDeviceClassList()}>
                 <div className='device-frame'>
-                    <div className='device-screen overflow-hidden' ref={ref}>
+                    <div className='device-screen overflow-hidden'>
                         <div
                             className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 ${
                                 landscape ? 'rotate-90' : ''
                             }`}
                             style={{
-                                width: `${landscape ? height : width}px`,
-                                height: `${landscape ? width : height}px`
+                                width: `${landscape ? '724' : '506'}px`,
+                                height: `${landscape ? '506' : '724'}px`
                             }}
                         >
                             {children}
