@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 export type BadgeSize = 'sm' | 'base' | 'lg';
 export type BadgeColour =
@@ -8,6 +8,7 @@ export type BadgeColour =
     | 'yellow'
     | 'gray'
     | 'grey'
+    | 'violet'
     | 'success'
     | 'danger'
     | 'warning'

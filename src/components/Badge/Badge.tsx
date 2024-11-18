@@ -11,6 +11,7 @@ const Badge: React.FC<BadgeProps> = ({
     const getCssColours = (): string => {
         return match(colour)
             .returnType<string>()
+            .with('violet', () => 'bg-violet-300/10 text-violet-400 ring-violet-300/20')
             .with('red', 'danger', () => 'bg-red-400/10 text-red-500 ring-red-400/20')
             .with('yellow', 'warning', () => 'bg-yellow-400/10 text-yellow-500 ring-yellow-400/20')
             .with('blue', 'primary', () => 'bg-blue-400/10 text-blue-500 ring-blue-400/20')
